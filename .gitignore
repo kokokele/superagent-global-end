@@ -1,0 +1,11 @@
+node_modules/
+dev/
+www/
+lib/
+dist/
+vdp/
+output/
+.DS_Store
+npm-debug.log
+manifest.json
+.idea
