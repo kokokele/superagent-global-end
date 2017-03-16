@@ -1,10 +1,10 @@
 /**
 * @file superagent 监听全局end
-* @author kele 
+* @author kele
 */
-import {superagent} from 'superagent';
+import {Request} from 'superagent';
 
-const end = superagent.prototype.end;
+const end = Request.prototype.end;
 
 /*
 * @param callback function(err, res)
@@ -13,7 +13,7 @@ export default function globalEnd(callback) {
 
     if (typeof callback !== 'function') return;
 
-    superagent.prototype.end = function (cb) {
+    Request.prototype.end = function (cb) {
         return end.call(this, function (err, res) {
             if (typeof cb !== 'function') {
                 return;
