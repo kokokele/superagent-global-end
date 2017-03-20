@@ -1,22 +1,24 @@
 # superagent-global-end
 
-Monitor global superagent end
+Monitor global superagent beforeStart, end
 
 
 ## install
 ```
-npm i superagent-global-end --save
+npm i superagent-global --save
 
 ```
 
 ## use
 ```
-import sge from 'superagent-global-end';
+import {beforeStart, end} from 'superagent-global';
 
-sge((err, res) => {
+beforeStart(()=> {
+    console.log('global_onBeforeStart');
+});
 
+end((err, res) => {
     console.log('global:', res);
-
-} )
+});
 
 ```

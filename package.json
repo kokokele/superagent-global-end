@@ -1,11 +1,11 @@
 {
-  "name": "superagent-global-end",
+  "name": "superagent-global",
   "version": "1.0.1",
-  "description": "superagent global end",
+  "description": "Monitor superagent global beforeStart end ",
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && ./node_modules/.bin/babel ./src --out-dir ./lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "testcafe chrome ./test/index.js --skip-js-errors"
   },
   "keywords": [
     "superagent"
@@ -13,6 +13,7 @@
   "author": "kele",
   "license": "MIT",
   "dependencies": {
+    "methods": "^1.1.2",
     "superagent": "^3.5.0"
   },
   "devDependencies": {
