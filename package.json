@@ -1,6 +1,6 @@
 {
   "name": "superagent-global",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Monitor superagent global beforeStart end ",
   "main": "lib/index.js",
   "scripts": {

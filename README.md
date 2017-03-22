@@ -17,8 +17,12 @@ beforeStart(()=> {
     console.log('global_onBeforeStart');
 });
 
+
 end((err, res) => {
     console.log('global:', res);
+
+    // if return true, every end callback will execute. or not
+    return true;
 });
 
 ```

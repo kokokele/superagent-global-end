@@ -20,15 +20,16 @@ export function end(callback) {
                 return;
             }
 
-            callback(err, res);
-            cb(err, res);
+            if (callback(err, res)) {
+                cb(err, res);
+            };
         });
     };
 }
 
 export function beforeStart(callback) {
     if (typeof callback !== 'function') return;
-    
+
     methods.forEach(m => {
         const old = superagent[m];
         superagent[m] = function(api) {
