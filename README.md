@@ -22,6 +22,9 @@ end((err, res) => {
     console.log('global:', res);
 
     // if return true, every end callback will execute. or not
+    if(err) {
+        return false;
+    }
     return true;
 });
 
