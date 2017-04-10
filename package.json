@@ -4,7 +4,7 @@
   "description": "Monitor superagent global beforeStart end ",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rm -rf lib && ./node_modules/.bin/babel ./src --out-dir ./lib",
+    "build": "rm -rf lib && babel ./src --out-dir ./lib",
     "test": "mocha  --require babel-register",
     "test:w": "mocha --require babel-register --watch --debug"
   },
