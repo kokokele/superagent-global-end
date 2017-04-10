@@ -9,6 +9,20 @@ import methods from 'methods';
 /*
 * @param callback function(err, res)
 */
+export function beforeSend(callback) {
+	if (typeof callback !== 'function') return;
+	const end = Request.prototype.end;
+	Request.prototype.end = function (cb) {
+		callback.call(this);
+		return end.call(this, function (err, res) {
+			if (typeof cb !== 'function') {
+				return;
+			}
+			cb(err, res);
+		});
+	};
+}
+
 export function end(callback) {
     if (typeof callback !== 'function') return;
 
