@@ -9,6 +9,20 @@ import methods from 'methods';
 /*
 * @param callback function(err, res)
 */
+export function beforeSend(callback) {
+	if (typeof callback !== 'function') return;
+	const end = Request.prototype.end;
+	Request.prototype.end = function (cb) {
+		callback(this);
+		return end.call(this, function (err, res) {
+			if (typeof cb !== 'function') {
+				return;
+			}
+			cb(err, res);
+		});
+	};
+}
+
 export function end(callback) {
     if (typeof callback !== 'function') return;
 
@@ -33,9 +47,12 @@ export function beforeStart(callback) {
     methods.forEach(m => {
         const old = superagent[m];
         superagent[m] = function(api) {
-            callback();
+            //callback();
+            callback(this);
             const request = old.apply(superagent, arguments);
             return request;
         }
     });
 }
+
+export default Request;
