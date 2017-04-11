@@ -17,6 +17,10 @@ beforeStart(()=> {
     console.log('global_onBeforeStart');
 });
 
+beforeSend((Request) => {
+    console.log('global_onBeforeEnd');
+});
+
 
 end((err, res) => {
     console.log('global:', res);
