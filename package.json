@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && babel ./src --out-dir ./lib",
+    "pub": "npm run build && git add . && git commit -am 'for publish' && npm version patch && npm publish && git push",
     "test": "mocha  --require babel-register",
     "test:w": "mocha --require babel-register --watch --debug"
   },
