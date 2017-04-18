@@ -9,6 +9,11 @@ npm i superagent-global --save
 
 ```
 
+## test
+```
+npm run jest
+```
+
 ## use
 ```
 import {beforeStart, end} from 'superagent-global';
@@ -18,7 +23,7 @@ beforeStart(()=> {
 });
 
 beforeSend((Request) => {
-    console.log('global_onBeforeEnd');
+    console.log('global_onBeforeSend');
 });
 
 

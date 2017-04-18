@@ -8,3 +8,4 @@ output/
 npm-debug.log
 manifest.json
 .idea
+.history
