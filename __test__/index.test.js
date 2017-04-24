@@ -2,6 +2,7 @@ import superagent from 'superagent';
 
 import {beforeSend, end, beforeStart} from '../src/index';
 
+const target = 'https://travis-ci.org/';
 
 describe('des test', () => {
     it('it test', () => {
@@ -14,7 +15,7 @@ describe('des test', () => {
 
         beforeSend(fn);
 
-        superagent.get('http://baidu.com').end((err, res) => {
+        superagent.get(target).end((err, res) => {
             expect(fn).toHaveBeenCalled();
             done();
 
@@ -26,7 +27,7 @@ describe('des test', () => {
 
         beforeStart(fn);
 
-         superagent.get('http://baidu.com').end((err, res) => {
+         superagent.get(target).end((err, res) => {
              done();
          });
 
@@ -39,7 +40,7 @@ describe('des test', () => {
             return true;
         });
 
-        superagent.get('http://baidu.com').end((err, res) => {
+        superagent.get(target).end((err, res) => {
             expect(res).toBeTruthy();
             done();
          })
