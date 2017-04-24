@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/kokokele/superagent-global-end.svg?branch=master)](https://travis-ci.org/kokokele/superagent-global-end)
 
-# superagent-global-end
+# superagent-global
 
 Monitor global superagent beforeStart, end
 
