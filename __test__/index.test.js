@@ -15,12 +15,9 @@ describe('des test', () => {
         beforeSend(fn);
 
         superagent.get('http://baidu.com').end((err, res) => {
-            expect(fn).toHaveBeenCalledTimes(1);
-            
-            superagent.get('http://baidu.com').end((err, res) => {
-                expect(fn).toHaveBeenCalledTimes(2);
-                done()
-            });
+            expect(fn).toHaveBeenCalled();
+            done();
+
         });
     });
 
@@ -37,7 +34,6 @@ describe('des test', () => {
     });
 
     it('test end', done => {
-        const fn = jest.fn();
         end((err, res) => {
             expect(res).toBeTruthy();
             return true;
