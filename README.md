@@ -28,7 +28,6 @@ beforeSend((Request) => {
     console.log('global_onBeforeSend');
 });
 
-
 end((err, res) => {
     console.log('global:', res);
 
