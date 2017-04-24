@@ -13,7 +13,7 @@ npm i superagent-global --save
 
 ## test
 ```
-npm run jest
+npm test
 ```
 
 ## use
