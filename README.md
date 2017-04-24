@@ -20,6 +20,7 @@ npm test
 ```
 import {beforeStart, end} from 'superagent-global';
 
+
 beforeStart(()=> {
     console.log('global_onBeforeStart');
 });
