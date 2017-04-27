@@ -18,7 +18,8 @@ npm test
 
 ## use
 ```
-import {beforeStart, end} from 'superagent-global';
+import superagent from 'superagent';
+import {beforeSend, beforeStart, end} from 'superagent-global';
 
 
 beforeStart(()=> {
@@ -37,6 +38,11 @@ end((err, res) => {
         return false;
     }
     return true;
+});
+
+// test get
+superagent.get('http://baidu.com').end((err, res) => {
+    console.log(res);
 });
 
 ```
